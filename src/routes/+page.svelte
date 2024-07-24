@@ -6,9 +6,13 @@
     import { Switch } from "$lib/components/ui/switch";
     import { Calendar } from "$lib/components/ui/calendar";
   import { today, getLocalTimeZone } from "@internationalized/date";
+	import Header from "$lib/Header.svelte";
 
   let value = today(getLocalTimeZone());
   </script>
+
+<Header></Header>
+
   <div class="mx-auto w-96  ">
     <Accordion.Root >
         <Accordion.Item value="item-1">
@@ -27,3 +31,4 @@
     
       <Calendar bind:value class="border rounded-md shadow" />
   </div>
+<button></button>

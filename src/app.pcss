@@ -2,77 +2,91 @@
 @tailwind components;
 @tailwind utilities;
  
+@font-face {
+  font-family: Gilroy;
+  font-weight: 400;
+  src: url('/fonts/Gilroy-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 500;
+  src: url('/fonts/Gilroy-Medium.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: Gilroy;
+  font-weight: 700;
+  src: url('/fonts/Gilroy-Bold.woff') format('woff');
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
- 
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
- 
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
- 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
- 
-    --primary: 220.9 39.3% 11%;
-    --primary-foreground: 210 20% 98%;
- 
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
- 
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
- 
-    --destructive: 0 72.2% 50.6%;
-    --destructive-foreground: 210 20% 98%;
- 
-    --ring: 224 71.4% 4.1%;
- 
-    --radius: 0.5rem;
-  }
- 
-  .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
- 
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
- 
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
- 
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
- 
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
- 
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
- 
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
- 
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
- 
-    --ring: 216 12.2% 83.9%;
+    --color-primary: 221 100% 31%;
+    --color-primary-light: 218 100% 53%;
+    --color-primary-dark: 221 100% 25%;
+    --color-primary-ultralight: 221 100% 92%;
+    --color-primary-ultradark: 225 100% 20%;
+    --color-primary-faded: 218 100% 81%;
+
+    --color-secondary: 196 100% 44%;
+    --color-secondary-faded: 196 78% 72%;
+
+    --color-tertiary: 26 34% 72%;
+
+    --color-background-lightblue: 218 100% 97%;
+    --color-background-paper: 0 0% 99%;
+
+    --color-alternative-pardo: 35 28% 41%;
+    --color-alternative-gold: 25 34% 51%;
+    --color-alternative-darkorange: 18 53% 45%;
+    --color-alternative-lightorange: 42 66 66%;
+    --color-alternative-prefermemberBlue: 212 81% 14%;
+
+    --color-system-warning: 44 100% 59%;
+    --color-system-warning-faded: 44 100% 92%;
+    --color-system-error: 360 70% 49%;
+    --color-system-error-faded: 0 100% 97%;
+    --color-system-success: 147 83% 27%;
+    --color-system-success-faded: 146 31% 85%;
+
+    --color-grey-800: 0 0% 7%;
+    --color-grey-700: 0 0% 40%;
+    --color-grey-600: 0 0% 40%;
+    --color-grey-500: 0 0% 60%;
+    --color-grey-400: 240 1% 67%;
+    --color-grey-300: 40 4% 85%;
+    --color-grey-200: 40 4% 85%;
+    --color-grey-100: 60 3% 94%;
+    --color-grey-75: 60 8% 97%;
+    --color-grey-50: 60 8% 97%;
+
+    --color-common-black: 0 0% 0%;
+    --color-common-white: 0 0% 100%;
+
+    --color-status-member: 221 100% 31%;
+    --color-status-silver: 219 88% 20%;
+    --color-status-gold: 36 32% 42%;
+    --color-status-platinum: 0 0% 40%;
+    --color-status-presidential: 0 0% 7%;
+
+    --spacing-minimal: 8px;
+    --spacing-tiny: 16px;
+    --spacing-petit: 24px;
+    --spacing-normal: 32px;
+    --spacing-roomy:
+      clamp(32px, (100vw - 599px) * 99, clamp(40px, (100vw - 959px) * 99, clamp(48px, (100vw - 1367px) * 99, 56px)));;
+    --spacing-spacious:
+      clamp(40px, (100vw - 599px) * 99, clamp(48px, (100vw - 959px) * 99, clamp(56px, (100vw - 1367px) * 99, 64px)));
+    --spacing-big: clamp(56px, (100vw - 599px) * 99, clamp(64px, (100vw - 959px) * 99, clamp(72px, (100vw - 1367px) * 99, 80px)));
+    --spacing-huge: clamp(72px, (100vw - 599px) * 99, clamp(88px, (100vw - 959px) * 99, clamp(96px, (100vw - 1367px) * 99, 112px)));
+
+    --media-brand: 245 245 245;
+    --media-focus: 78 156 246;
   }
 }
- 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+
+html {
+  scroll-behavior: smooth;
 }
